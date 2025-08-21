@@ -1,13 +1,17 @@
-/* ShadCN-inspired company styling */
+/* Controlled Substance Order styling */
 :root {
-  --primary: #500F0B;
-  --primary-light: #701a15;
-  --accent: #FBF9F5;
-  --background: #ffffff;
+  --primary: #0e7a38; 
+  --primary-light: #16a54d;
+  --primary-dark: #095f2a;
+  --custom-green: #348F41; /* Button outline and text color */
+  --custom-green-light: #C0DCC4; /* Button hover background */
+  --accent: #f5f5f5;
+  --background: #F7F9FB;
   --text: #333333;
   --text-secondary: #666666;
   --border: #e2e8f0;
-  --border-radius: 0.5rem;
+  --border-radius-sm: 0.5rem;
+  --border-radius-lg: 1.5rem;
   --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
@@ -21,13 +25,22 @@ body {
   background-repeat: no-repeat;
 }
 
+/* Font styling */
+h2, .modal-heading {
+  font-family: 'Syne', sans-serif;
+}
+
 /* Modal styling */
 .bg-white {
   background-color: var(--background);
 }
 
-.rounded-lg {
-  border-radius: var(--border-radius);
+.rounded-3xl {
+  border-radius: var(--border-radius-lg);
+}
+
+.rounded-xl {
+  border-radius: var(--border-radius-sm);
 }
 
 .shadow-xl {
@@ -48,90 +61,122 @@ body {
   position: relative;
 }
 
-/* Additional modal positioning */
-.modal-container {
-  position: relative;
-  max-height: 90vh;
-  overflow-y: auto;
-}
-
 /* Form elements */
 input, select {
-  border-radius: var(--border-radius) !important;
   transition: all 0.2s ease-in-out;
 }
 
 input:focus, select:focus {
   border-color: var(--primary) !important;
-  box-shadow: 0 0 0 2px rgba(80, 15, 11, 0.2) !important;
+  box-shadow: 0 0 0 2px rgba(14, 122, 56, 0.2) !important;
   outline: none !important;
-  ring-color: var(--primary) !important;
+}
+
+/* Style for the select dropdown */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2.5rem;
 }
 
 /* Button styling */
 button {
-  background-color: var(--primary) !important;
-  border-radius: var(--border-radius) !important;
+  border-radius: var(--border-radius-sm) !important;
   font-weight: 500;
   transition: all 0.2s ease;
 }
 
-button:hover {
-  background-color: var(--primary-light) !important;
-  transform: translateY(-1px);
+/* Custom outlined button styling */
+.text-custom-green {
+  color: var(--custom-green) !important;
 }
 
-/* Table styling */
+.border-custom-green {
+  border-color: var(--custom-green) !important;
+}
+
+.hover\:bg-custom-green-light:hover {
+  background-color: var(--custom-green-light) !important;
+}
+
+.focus\:ring-custom-green:focus {
+  --tw-ring-color: var(--custom-green) !important;
+}
+
+/* Color change on hover handled by Tailwind classes */
+
+/* Green header bar */
+.bg-green-600 {
+  background-color: var(--primary);
+}
+
+/* Table styling with rounded corners */
 table {
   border-collapse: separate;
   border-spacing: 0;
   width: 100%;
 }
 
+thead {
+  background-color: #e5e7eb; /* Light gray header */
+}
+
 th {
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.75rem;
-  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--text);
+  padding: 0.75rem 1.5rem;
 }
 
-tr:hover {
-  background-color: rgba(80, 15, 11, 0.05);
+.rounded-tl-xl {
+  border-top-left-radius: var(--border-radius-sm);
 }
 
-/* Navigation icons styling - based on the memory provided */
-.nav-icon {
-  transition: opacity 0.2s ease;
+.rounded-tr-xl {
+  border-top-right-radius: var(--border-radius-sm);
 }
 
-.nav-icon.active {
-  border: 2px solid #FBF9F5;
-  opacity: 1;
+.rounded-bl-xl {
+  border-bottom-left-radius: var(--border-radius-sm);
 }
 
-.nav-icon.inactive {
-  border: 2px solid transparent;
-  opacity: 0.5;
+.rounded-br-xl {
+  border-bottom-right-radius: var(--border-radius-sm);
 }
 
-.nav-icon.inactive:hover {
-  opacity: 0.8;
+/* Table cell styling */
+td {
+  padding: 1rem 1.5rem;
+}
+
+/* Ensure table is scrollable horizontally */
+.overflow-x-auto {
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
 /* Header styling */
 h2 {
-  color: var(--primary);
+  color: var(--text);
+  font-weight: 400;
+  margin-bottom: 1rem;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -141,4 +186,27 @@ h2 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-light);
+}
+
+/* Tailwind override classes */
+.bg-green-600 {
+  background-color: var(--primary) !important;
+}
+
+.focus\:ring-green-500:focus {
+  --tw-ring-color: var(--primary) !important;
+}
+
+.hover\:bg-green-700:hover {
+  background-color: var(--primary-light) !important;
+}
+
+/* Form field backgrounds */
+.bg-gray-100 {
+  background-color: #f5f5f5;
+}
+
+/* Make sure the green button matches design */
+.border-green-600 {
+  border-color: var(--primary);
 }
