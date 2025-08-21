@@ -1,47 +1,53 @@
-# Modal UI Demo
+# Controlled Substance Order Modal
 
-A simple UI demonstration for a modal dialog with form inputs, a data table, and company styling.
+A modern UI prototype for a controlled substance order modal with responsive design and custom styling.
 
 ## Overview
 
-This project creates a standalone modal UI with the following features:
+This project showcases a responsive modal interface for controlled substance orders with the following features:
 
-- Background image with scrim overlay
-- Modal dialog with heading
-- Form inputs (text field, selects, radio buttons)
-- Data table showing entries
-- Interactive submit button
-- Company styling with ShadCN-inspired components
+- Clean, modern design with custom background and overlay
+- Compact, professional layout with bold typography
+- Interactive form elements including dropdown for addresses and PIN field
+- Compact horizontal scrolling data table with editable fields
+- Custom styled outline button for form submission
 
 ## Project Structure
 
-- `index.html` - Main HTML structure with the modal layout
-- `styles.css` - Custom styling with company color scheme (#500F0B primary color)
-- `script.js` - JavaScript for form handling and modal interactivity
-- `images/` - Directory containing background image
-  - Place your background image as `background.png` in this directory
+- `index.html` - Main HTML structure with the modal layout and Tailwind CSS classes
+- `styles.css` - Custom styling with green-based color scheme and font definitions
+- `script.js` - JavaScript for handling form interactions and table functionality
+- `images/` - Directory containing the background image
 
 ## Features
 
-- **Form Submission**: Add new entries to the table
-- **Data Validation**: Basic validation for required fields
-- **Success Messaging**: Feedback when entries are added successfully
-- **Draggable Modal**: Click and drag the modal header to reposition
+- **Responsive Design**: Works across different screen sizes
+- **Address Selection**: Dropdown menu for selecting delivery addresses
+- **Editable Table Fields**: The "Total Quantity in Words" column contains editable input fields
+- **Compact Table Layout**: Space-efficient table design that preserves readability
+- **Custom Typography**: Uses Syne font for headings and system fonts for content
+- **Accessibility**: Focus states and proper contrast for improved usability
+
+## Technical Implementation
+
+- Built with Tailwind CSS for utility-first styling
+- Custom Google Font integration for the Syne typeface
+- Interactive form elements with custom styling
+- Responsive table with horizontal scrolling for smaller screens
+- Clean, minimal design focused on readability and usability
 
 ## Usage
 
-1. Place your background image as `background.png` in the `images/` directory
-2. Open `index.html` in a web browser to view the modal
-3. No server setup required
+1. Open `index.html` in a modern web browser
+2. Interact with the dropdown menu, table fields, and save button
+3. No server setup required - this is a static HTML prototype
 
-Note: The background image just represents the site with no interaction. All interaction occurs within the modal itself.
+## Styling Details
 
-## Styling Notes
-
-The styling follows company guidelines with:
-- Primary color: `#500F0B`
-- Accent color: `#FBF9F5`
-- Navigation icons:
-  - Active state: Icon with #FBF9F5 border
-  - Inactive state: Icon with #500F0B at 50% opacity
-  - Hover state: 80% opacity for inactive icons
+- **Background**: Light gray (`#F7F9FB`) for the modal
+- **Text**: Dark gray (`#1F2937`) for primary text
+- **Accents**: Custom green (`#16A34A`) for interactive elements
+- **Font Pairing**:
+  - Syne: Used for headings and titles
+  - System fonts: Used for body text and data
+- **Button Style**: Outlined with green border and transparent background
